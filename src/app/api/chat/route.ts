@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     knowledge
   }).catch(() => ({
     message: "zasyl.care provides healthcare support and consultation services for patients, especially people managing ongoing health conditions. Please share your concern, and our care team can guide you on the next step.",
-    quickReplies: ["Chat With Us", "Share Location", "Discuss Health Needs", "Call Booking", "Care Availability"],
+    quickReplies: ["Chat With Us", "Discuss Health Needs", "Call Booking", "Care Availability"],
     shouldCollectLead: true,
     intent: "support" as const
   }));
