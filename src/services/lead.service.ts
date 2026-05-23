@@ -169,7 +169,7 @@ export async function createLead(payload: Omit<Lead, "id" | "createdAt" | "updat
   }
 
   if (payload.bookingDate && payload.bookingTime) {
-    await supabase.from("bookings").insert({
+    const { error: bookingError } = await supabase.from("bookings").insert({
       company_id: payload.companyId,
       lead_id: data.id,
       requested_date: payload.bookingDate,
@@ -177,6 +177,11 @@ export async function createLead(payload: Omit<Lead, "id" | "createdAt" | "updat
       notes: payload.notes,
       status: "Pending Approval"
     });
+
+    if (bookingError) {
+      await supabase.from("leads").delete().eq("id", data.id).eq("company_id", payload.companyId);
+      throw bookingError;
+    }
   }
 
   return {
