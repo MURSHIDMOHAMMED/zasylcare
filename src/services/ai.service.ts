@@ -5,7 +5,7 @@ import { knowledgeToContext } from "@/services/knowledge.service";
 import type { ChatMessage, ChatResponse } from "@/types/chatbot.types";
 import type { CompanyKnowledge } from "@/types/company.types";
 
-const defaultQuickReplies = ["Parent Location", "Care Availability", "Health Status", "Care Support"];
+const defaultQuickReplies = ["Share Location", "Discuss Health Needs", "Care Availability", "Care Support"];
 
 function detectIntent(message: string): ChatResponse["intent"] {
   const lower = message.toLowerCase();

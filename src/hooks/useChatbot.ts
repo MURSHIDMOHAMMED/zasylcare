@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import type { ChatMessage } from "@/types/chatbot.types";
 
 const greeting = "Hi, welcome to zasyl.care. What health concern or consultation question can we help with?";
-const defaultQuickReplies = ["Parent Location", "Care Availability", "Health Status", "Care Support"];
+const defaultQuickReplies = ["Share Location", "Discuss Health Needs", "Care Availability", "Care Support"];
 
 function createClientId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
