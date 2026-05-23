@@ -22,7 +22,7 @@ values
 ('00000000-0000-4000-8000-000000000001', 'Patient Follow-up Coordination', 'Care team follow-up to help patients stay connected with the right healthcare guidance.', 'Contact team', true);
 
 insert into chatbot_settings (company_id, greeting, tone, handoff_email)
-values ('00000000-0000-4000-8000-000000000001', 'Hi, welcome to zasyl.care. What health concern or consultation question can we help with?', 'professional', 'support@zasyl.care');
+values ('00000000-0000-4000-8000-000000000001', 'Hi, welcome to zasyl.care. Please tell us about yourself, who needs care, and where you are located. Is the service for you, your parent, father, mother, or another family member?', 'professional', 'support@zasyl.care');
 
 insert into availability_slots (company_id, slot_date, slot_time, enabled)
 values
