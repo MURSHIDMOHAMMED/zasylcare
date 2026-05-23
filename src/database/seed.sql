@@ -22,9 +22,11 @@ values
 ('00000000-0000-4000-8000-000000000001', 'Patient Follow-up Coordination', 'Care team follow-up to help patients stay connected with the right healthcare guidance.', 'Contact team', true);
 
 insert into chatbot_settings (company_id, greeting, tone, handoff_email)
-values ('00000000-0000-4000-8000-000000000001', 'Hi, welcome to zasyl.care. Please tell us about yourself, who needs care, and where you are located. Is the service for you, your parent, father, mother, or another family member?
+values ('00000000-0000-4000-8000-000000000001', 'Hello and welcome to ZasylCare.
+Please tell us a little about yourself, who requires care, and where they are located. Is this service for your father, mother, parents, yourself, or another family member?
 
-നമസ്കാരം, zasyl.care-ലേക്ക് സ്വാഗതം. നിങ്ങളെക്കുറിച്ച്, പരിചരണം ആവശ്യമായത് ആര്‍ക്കാണ്, നിങ്ങൾ എവിടെയാണ് എന്നതും പറയൂ. ഈ സേവനം നിങ്ങൾക്കാണോ, നിങ്ങളുടെ മാതാപിതാക്കൾക്കാണോ, അച്ഛനാണോ, അമ്മയാണോ, അല്ലെങ്കിൽ മറ്റൊരു കുടുംബാംഗത്തിനാണോ?', 'professional', 'support@zasyl.care');
+നമസ്കാരം, ZasylCare-ലേക്ക് സ്വാഗതം.
+ദയവായി നിങ്ങളെക്കുറിച്ചും, പരിചരണം ആവശ്യമുള്ളത് ആര്‍ക്കാണെന്നും, അവർ എവിടെയാണെന്നും അറിയിക്കൂ. ഈ സേവനം നിങ്ങളുടെ അച്ഛന്‍, അമ്മയ്ക്ക്, മാതാപിതാക്കള്‍ക്ക്, നിങ്ങള്‍ക്കോ, അല്ലെങ്കില്‍ മറ്റൊരു കുടുംബാംഗത്തിനായാണോ?', 'professional', 'support@zasyl.care');
 
 insert into availability_slots (company_id, slot_date, slot_time, enabled)
 values

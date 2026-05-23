@@ -3,7 +3,13 @@
 import { useMemo, useState } from "react";
 import type { ChatMessage } from "@/types/chatbot.types";
 
-const greeting = "Hi, welcome to zasyl.care. Please tell us about yourself, who needs care, and where you are located. Is the service for you, your parent, father, mother, or another family member?\n\nനമസ്കാരം, zasyl.care-ലേക്ക് സ്വാഗതം. നിങ്ങളെക്കുറിച്ച്, പരിചരണം ആവശ്യമായത് ആര്‍ക്കാണ്, നിങ്ങൾ എവിടെയാണ് എന്നതും പറയൂ. ഈ സേവനം നിങ്ങൾക്കാണോ, നിങ്ങളുടെ മാതാപിതാക്കൾക്കാണോ, അച്ഛനാണോ, അമ്മയാണോ, അല്ലെങ്കിൽ മറ്റൊരു കുടുംബാംഗത്തിനാണോ?";
+const greeting = [
+  "Hello and welcome to ZasylCare.",
+  "Please tell us a little about yourself, who requires care, and where they are located. Is this service for your father, mother, parents, yourself, or another family member?",
+  "",
+  "\u0d28\u0d2e\u0d38\u0d4d\u0d15\u0d3e\u0d30\u0d02, ZasylCare-\u0d32\u0d47\u0d15\u0d4d\u0d15\u0d4d \u0d38\u0d4d\u0d35\u0d3e\u0d17\u0d24\u0d02.",
+  "\u0d26\u0d2f\u0d35\u0d3e\u0d2f\u0d3f \u0d28\u0d3f\u0d19\u0d4d\u0d19\u0d33\u0d46\u0d15\u0d4d\u0d15\u0d41\u0d31\u0d3f\u0d1a\u0d4d\u0d1a\u0d41\u0d02, \u0d2a\u0d30\u0d3f\u0d1a\u0d30\u0d23\u0d02 \u0d06\u0d35\u0d36\u0d4d\u0d2f\u0d2e\u0d41\u0d33\u0d4d\u0d33\u0d24\u0d4d \u0d06\u0d30\u0d4d\u0d15\u0d4d\u0d15\u0d3e\u0d23\u0d46\u0d28\u0d4d\u0d28\u0d41\u0d02, \u0d05\u0d35\u0d30\u0d4d \u0d0e\u0d35\u0d3f\u0d1f\u0d46\u0d2f\u0d3e\u0d23\u0d46\u0d28\u0d4d\u0d28\u0d41\u0d02 \u0d05\u0d31\u0d3f\u0d2f\u0d3f\u0d15\u0d4d\u0d15\u0d42. \u0d08 \u0d38\u0d47\u0d35\u0d28\u0d02 \u0d28\u0d3f\u0d19\u0d4d\u0d19\u0d33\u0d41\u0d1f\u0d46 \u0d05\u0d1a\u0d4d\u0d1b\u0d28\u0d4d, \u0d05\u0d2e\u0d4d\u0d2e\u0d2f\u0d4d\u0d15\u0d4d\u0d15\u0d4d, \u0d2e\u0d3e\u0d24\u0d3e\u0d2a\u0d3f\u0d24\u0d3e\u0d15\u0d4d\u0d15\u0d33\u0d4d\u0d15\u0d4d\u0d15\u0d4d, \u0d28\u0d3f\u0d19\u0d4d\u0d19\u0d33\u0d4d\u0d15\u0d4d\u0d15\u0d4b, \u0d05\u0d32\u0d4d\u0d32\u0d46\u0d19\u0d4d\u0d15\u0d3f\u0d32\u0d4d \u0d2e\u0d31\u0d4d\u0d31\u0d4a\u0d30\u0d41 \u0d15\u0d41\u0d1f\u0d41\u0d02\u0d2c\u0d3e\u0d02\u0d17\u0d24\u0d4d\u0d24\u0d3f\u0d28\u0d3e\u0d2f\u0d3e\u0d23\u0d4b?"
+].join("\n");
 const defaultQuickReplies = ["Chat With Us", "Discuss Health Needs", "Call Booking", "Care Availability"];
 
 function createClientId() {
