@@ -25,7 +25,7 @@ export function ChatWindow({ companyId, companyName }: { companyId: string; comp
         </div>
         <div>
           <h1 className="font-semibold">{companyName}</h1>
-          <p className="text-xs text-muted-foreground">AI receptionist · usually replies instantly</p>
+          <p className="text-xs text-muted-foreground">Chat with us</p>
         </div>
       </header>
       <div className="flex-1 space-y-4 overflow-y-auto p-4">
