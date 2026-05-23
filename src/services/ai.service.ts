@@ -5,6 +5,8 @@ import { knowledgeToContext } from "@/services/knowledge.service";
 import type { ChatMessage, ChatResponse } from "@/types/chatbot.types";
 import type { CompanyKnowledge } from "@/types/company.types";
 
+const defaultQuickReplies = ["Parent Location", "Care Availability", "Health Status", "Care Support"];
+
 function detectIntent(message: string): ChatResponse["intent"] {
   const lower = message.toLowerCase();
   if (/(book|call|consult|appointment|schedule|demo)/.test(lower)) return "booking_interest";
@@ -43,7 +45,7 @@ function localKnowledgeFallback(input: {
 
   return {
     message: input.shouldCollectLead ? `${fallback} Would you like to schedule a free consultation call with our team?` : fallback,
-    quickReplies: input.shouldCollectLead ? ["Yes, schedule a call", "I have another question"] : ["Pricing", "Services", "Consultation process"],
+    quickReplies: input.shouldCollectLead ? ["Yes, schedule a call", "I have another question"] : defaultQuickReplies,
     shouldCollectLead: input.shouldCollectLead,
     intent: input.intent
   };
@@ -75,7 +77,7 @@ export async function generateChatbotResponse(input: {
   if (groqMessage) {
     return {
       message: groqMessage,
-      quickReplies: shouldCollectLead ? ["Yes, schedule a call", "Not yet"] : ["Pricing", "Services", "Talk to team"],
+      quickReplies: shouldCollectLead ? ["Yes, schedule a call", "Not yet"] : defaultQuickReplies,
       shouldCollectLead,
       intent
     };

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { ChatMessage } from "@/types/chatbot.types";
 
 const greeting = "Hi, welcome to zasyl.care. What health concern or consultation question can we help with?";
+const defaultQuickReplies = ["Parent Location", "Care Availability", "Health Status", "Care Support"];
 
 function createClientId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
@@ -18,7 +19,7 @@ export function useChatbot(companyId: string) {
     { id: "greeting", role: "assistant", content: greeting, createdAt: new Date().toISOString() }
   ]);
   const [isTyping, setIsTyping] = useState(false);
-  const [quickReplies, setQuickReplies] = useState(["Pricing", "Services", "Consultation process"]);
+  const [quickReplies, setQuickReplies] = useState(defaultQuickReplies);
   const [isCollectingLead, setIsCollectingLead] = useState(false);
   const sessionId = useMemo(() => createClientId(), []);
 
@@ -72,7 +73,7 @@ export function useChatbot(companyId: string) {
 
   function closeLeadCapture() {
     setIsCollectingLead(false);
-    setQuickReplies(["Pricing", "Services", "Consultation process"]);
+    setQuickReplies(defaultQuickReplies);
   }
 
   function addAssistantMessage(content: string) {
