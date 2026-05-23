@@ -40,7 +40,7 @@ export default function HomePage() {
               consultation bookings, and admin-controlled approvals.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground" href="/chatbot/zasilcare-health">
+              <Link className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground" href="/chatbot/zasyl-care">
                 Try chatbot <ArrowRight className="h-4 w-4" />
               </Link>
               <Link className="inline-flex items-center gap-2 rounded-lg border bg-card px-5 py-3 text-sm font-semibold" href="/admin/leads">
@@ -59,7 +59,7 @@ export default function HomePage() {
                 <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">Online</span>
               </div>
               <div className="space-y-3">
-                {["Hi, I need help managing an ongoing health condition.", "Zasilcare Health provides healthcare support, consultation services, and continuous care management for patients with ongoing health needs.", "Can I request a consultation?", "Yes. Please share your concern, preferred date and time, and contact details so the care team can follow up with next steps."].map((message, index) => (
+                {["Hi, I need help managing an ongoing health condition.", "zasyl.care provides healthcare support, consultation services, and continuous care management for patients with ongoing health needs.", "Can I request a consultation?", "Yes. Please share your concern, preferred date and time, and contact details so the care team can follow up with next steps."].map((message, index) => (
                   <div key={message} className={`max-w-[84%] rounded-lg px-4 py-3 text-sm ${index % 2 ? "bg-primary text-primary-foreground" : "bg-card"}`}>
                     {message}
                   </div>

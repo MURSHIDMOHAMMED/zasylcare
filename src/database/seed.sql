@@ -1,5 +1,5 @@
 insert into companies (id, name, slug, primary_color, support_email, phone, timezone)
-values ('00000000-0000-4000-8000-000000000001', 'Zasilcare Health', 'zasilcare-health', '#0f766e', 'support@zasilcare.example', '+1 555 010 2040', 'America/New_York')
+values ('00000000-0000-4000-8000-000000000001', 'zasyl.care', 'zasyl-care', '#0f766e', 'support@zasyl.care', '+1 555 010 2040', 'America/New_York')
 on conflict (id) do update set
 name = excluded.name,
 slug = excluded.slug,
@@ -11,8 +11,8 @@ updated_at = now();
 
 insert into company_knowledge (company_id, title, category, content, enabled)
 values
-('00000000-0000-4000-8000-000000000001', 'Company Overview', 'Company Info', 'Zasilcare Health provides healthcare support and consultation services focused on continuous healthcare management for patients, especially people with ongoing health conditions.', true),
-('00000000-0000-4000-8000-000000000001', 'Healthcare Support', 'Services', 'Zasilcare Health helps patients coordinate care, understand next steps, and request consultation support for ongoing healthcare needs.', true),
+('00000000-0000-4000-8000-000000000001', 'Company Overview', 'Company Info', 'zasyl.care provides healthcare support and consultation services focused on continuous healthcare management for patients, especially people with ongoing health conditions.', true),
+('00000000-0000-4000-8000-000000000001', 'Healthcare Support', 'Services', 'zasyl.care helps patients coordinate care, understand next steps, and request consultation support for ongoing healthcare needs.', true),
 ('00000000-0000-4000-8000-000000000001', 'Consultation Process', 'FAQ', 'Patients can request a consultation by sharing their concern, preferred date and time, and contact details. The care team reviews the request and follows up with next steps.', true);
 
 insert into services (company_id, name, description, price_label, enabled)
@@ -22,7 +22,7 @@ values
 ('00000000-0000-4000-8000-000000000001', 'Patient Follow-up Coordination', 'Care team follow-up to help patients stay connected with the right healthcare guidance.', 'Contact team', true);
 
 insert into chatbot_settings (company_id, greeting, tone, handoff_email)
-values ('00000000-0000-4000-8000-000000000001', 'Hi, welcome to Zasilcare Health. What health concern or consultation question can we help with?', 'professional', 'support@zasilcare.example');
+values ('00000000-0000-4000-8000-000000000001', 'Hi, welcome to zasyl.care. What health concern or consultation question can we help with?', 'professional', 'support@zasyl.care');
 
 insert into availability_slots (company_id, slot_date, slot_time, enabled)
 values

@@ -25,13 +25,13 @@ export function SettingsForm() {
   const { toast } = useToast();
   const [saving, setSaving] = useState(false);
   const [settings, setSettings] = useState<SettingsData>({
-    companyName: "Zasilcare Health",
-    supportEmail: "support@zasilcare.example",
+    companyName: "zasyl.care",
+    supportEmail: "support@zasyl.care",
     phone: "+1 555 010 2040",
     timezone: "America/New_York",
     greeting: "Hi! How can I help you today?",
     tone: "professional",
-    handoffEmail: "support@zasilcare.example",
+    handoffEmail: "support@zasyl.care",
     collectBooking: true
   });
 

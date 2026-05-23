@@ -85,7 +85,7 @@ export function Header() {
     <header className="sticky top-0 z-20 border-b bg-background/90 px-4 py-4 backdrop-blur md:px-8">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <p className="text-sm text-muted-foreground">Zasilcare Health</p>
+          <p className="text-sm text-muted-foreground">zasyl.care</p>
           <h1 className="text-2xl font-semibold">{title}</h1>
         </div>
         <div className="flex flex-1 items-center justify-end gap-2">

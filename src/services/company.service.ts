@@ -3,10 +3,10 @@ import type { Company } from "@/types/company.types";
 
 export const demoCompany: Company = {
   id: "00000000-0000-4000-8000-000000000001",
-  name: "Zasilcare Health",
-  slug: "zasilcare-health",
+  name: "zasyl.care",
+  slug: "zasyl-care",
   primaryColor: "#0f766e",
-  supportEmail: "support@zasilcare.example",
+  supportEmail: "support@zasyl.care",
   phone: "+1 555 010 2040",
   timezone: "America/New_York",
   createdAt: new Date().toISOString(),
@@ -14,9 +14,10 @@ export const demoCompany: Company = {
 };
 
 const demoCompanyId = "00000000-0000-4000-8000-000000000001";
+const demoCompanyAliases = ["demo-company", "zasilcare-health", "zasyl-care"];
 
 export async function getCompanyBySlugOrId(companyId: string): Promise<Company | null> {
-  const fallbackRequested = companyId === "demo-company" || companyId === demoCompany.slug || companyId === demoCompany.id;
+  const fallbackRequested = demoCompanyAliases.includes(companyId) || companyId === demoCompany.id;
   let data = null;
   let error = null;
 

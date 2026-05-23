@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     history: parsed.data.history,
     knowledge
   }).catch(() => ({
-    message: "Zasilcare Health provides healthcare support and consultation services for patients, especially people managing ongoing health conditions. Please share your concern, and our care team can guide you on the next step.",
+    message: "zasyl.care provides healthcare support and consultation services for patients, especially people managing ongoing health conditions. Please share your concern, and our care team can guide you on the next step.",
     quickReplies: ["Book consultation", "Healthcare support", "Talk to team"],
     shouldCollectLead: true,
     intent: "support" as const

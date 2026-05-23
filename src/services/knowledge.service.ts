@@ -9,7 +9,7 @@ export const demoKnowledge: CompanyKnowledge[] = [
     companyId: "00000000-0000-4000-8000-000000000001",
     title: "Company Overview",
     category: "Company Info",
-    content: "Zasilcare Health provides healthcare support and consultation services focused on continuous healthcare management for patients, especially people with ongoing health conditions.",
+    content: "zasyl.care provides healthcare support and consultation services focused on continuous healthcare management for patients, especially people with ongoing health conditions.",
     enabled: true,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
@@ -19,7 +19,7 @@ export const demoKnowledge: CompanyKnowledge[] = [
     companyId: "00000000-0000-4000-8000-000000000001",
     title: "Healthcare Support",
     category: "Services",
-    content: "Zasilcare Health helps patients coordinate care, understand next steps, and request consultation support for ongoing healthcare needs.",
+    content: "zasyl.care helps patients coordinate care, understand next steps, and request consultation support for ongoing healthcare needs.",
     enabled: true,
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString()
@@ -160,7 +160,7 @@ export async function getEnabledKnowledge(companyId: string): Promise<CompanyKno
     data = response.data;
     error = response.error;
   } catch {
-    if (companyId === "demo-company" || companyId === "zasilcare-health" || companyId === demoCompanyId) {
+    if (companyId === "demo-company" || companyId === "zasyl-care" || companyId === "zasilcare-health" || companyId === demoCompanyId) {
       return getDemoKnowledge();
     }
 
@@ -168,7 +168,7 @@ export async function getEnabledKnowledge(companyId: string): Promise<CompanyKno
   }
 
   if (error || !data) {
-    if (companyId === "demo-company" || companyId === "zasilcare-health" || companyId === demoCompanyId) {
+    if (companyId === "demo-company" || companyId === "zasyl-care" || companyId === "zasilcare-health" || companyId === demoCompanyId) {
       return getDemoKnowledge();
     }
 
